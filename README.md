@@ -49,13 +49,6 @@ application:
         res.redirect('/');
       });
 
-## Related Modules
-
-- [passport-oauth1](https://github.com/jaredhanson/passport-oauth1) — OAuth 1.0 authentication strategy
-- [passport-http-bearer](https://github.com/jaredhanson/passport-http-bearer) — Bearer token authentication strategy for APIs
-- [OAuth2orize](https://github.com/jaredhanson/oauth2orize) — OAuth 2.0 authorization server toolkit
-
-
 ## Credits
 
   - [Jared Hanson](http://github.com/jaredhanson)
