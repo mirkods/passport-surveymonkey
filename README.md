@@ -1,9 +1,5 @@
 # passport-surveymonkey
 
-[![Build](https://travis-ci.org/jaredhanson/passport-oauth2.png)](http://travis-ci.org/jaredhanson/passport-oauth2)
-[![Coverage](https://coveralls.io/repos/jaredhanson/passport-oauth2/badge.png)](https://coveralls.io/r/jaredhanson/passport-oauth2)
-[![Dependencies](https://david-dm.org/jaredhanson/passport-oauth2.png)](http://david-dm.org/jaredhanson/passport-oauth2)
-
 SurveyMonkey authentication strategy for [Passport](http://passportjs.org/).
 
 This module lets you authenticate using SurveyMonkey OAuth in your Node.js applications.
