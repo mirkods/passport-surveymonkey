@@ -6,40 +6,27 @@
 
 SurveyMonkey authentication strategy for [Passport](http://passportjs.org/).
 
-This module lets you authenticate using OAuth 2.0 in your Node.js applications.
-By plugging into Passport, OAuth 2.0 authentication can be easily and
-unobtrusively integrated into any application or framework that supports
+This module lets you authenticate using SurveyMonkey OAuth in your Node.js applications.
 [Connect](http://www.senchalabs.org/connect/)-style middleware, including
 [Express](http://expressjs.com/).
-
-Note that this strategy provides generic OAuth 2.0 support.  In many cases, a
-provider-specific strategy can be used instead, which cuts down on unnecessary
-configuration, and accommodates any provider-specific quirks.  See the
-[list](https://github.com/jaredhanson/passport/wiki/Strategies) for supported
-providers.
-
-Developers who need to implement authentication against an OAuth 2.0 provider
-that is not already supported are encouraged to sub-class this strategy.  If you
-choose to open source the new provider-specific strategy, please add it to the
-list so other people can find it.
 
 ## Usage
 
 #### Configure Strategy
 
-The OAuth 2.0 authentication strategy authenticates users using a third-party
-account and OAuth 2.0 tokens.  The provider's OAuth 2.0 endpoints, as well as
+The SurveyMonkey authentication strategy authenticates users using a third-party
+account and SurveyMonkey tokens.  The provider's OAuth 2.0 endpoints, as well as
 the client identifer and secret, are specified as options.  The strategy
 requires a `verify` callback, which receives an access token and profile,
 and calls `done` providing a user.
+  
+    var SurveyMonkeyStrategy = require('passport-surveymonkey').Strategy;
 
-    passport.use(new OAuth2Strategy({
-        authorizationURL: 'https://www.example.com/oauth2/authorize',
-        tokenURL: 'https://www.example.com/oauth2/token',
-        clientID: EXAMPLE_CLIENT_ID,
-        clientSecret: EXAMPLE_CLIENT_SECRET,
-        api_key: EXAMPLE_API_KEY,
-        callbackURL: "http://localhost:3000/auth/example/callback"
+    passport.use(new SurveyMonkeyStrategy({      
+        clientID: 'SURVEYMONKEY USERNAME',
+        clientSecret: SURVEYMONKEY APP SECRET,
+        api_key: SURVEYMONKEY APP_KEY,
+        callbackURL: "http://yoursite.com/auth/example/callback"
       },
       function(accessToken, refreshToken, profile, done) {
         User.findOrCreate({ exampleId: profile.id }, function (err, user) {
@@ -50,7 +37,7 @@ and calls `done` providing a user.
 
 #### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'oauth2'` strategy, to
+Use `passport.authenticate()`, specifying the `'surveymonkey'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
